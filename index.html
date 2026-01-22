@@ -6,6 +6,12 @@
   <meta name="description" content="Haiyi Education Group — Global Education Advisory." />
   <title>Haiyi Education Group</title>
   <link rel="icon" href="favicon.ico" />
+
+  <!-- Quiet luxury typography: Serif headlines + clean body font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#fbfcff;
@@ -19,36 +25,79 @@
       --radius:18px;
       --max: 980px;
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:
         radial-gradient(1100px 520px at 15% 6%, rgba(29,78,216,.08), transparent 58%),
         radial-gradient(900px 460px at 85% 18%, rgba(99,102,241,.07), transparent 55%),
         var(--bg);
-      line-height:1.6;
+      line-height:1.65;
     }
+
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:30px 18px 70px}
+
     header{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px; padding:6px 2px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:6px 2px 18px;
     }
-    .brand{display:flex; align-items:center; gap:12px; min-width:0}
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
     .logoWrap{
-      width:46px; height:46px; border-radius:14px;
-      background:#fff; border:1px solid var(--line);
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      background:#fff;
+      border:1px solid var(--line);
       box-shadow: var(--shadow2);
-      display:grid; place-items:center; overflow:hidden;
+      display:grid;
+      place-items:center;
+      overflow:hidden;
       flex:0 0 auto;
     }
-    .logoWrap img{width:38px; height:38px; object-fit:contain; display:block}
+
+    .logoWrap img{
+      width:38px;
+      height:38px;
+      object-fit:contain;
+      display:block;
+    }
+
     .brandText{min-width:0}
-    .brandText .name{font-size:15px; font-weight:700; margin:0; letter-spacing:.1px}
-    .brandText .tag{font-size:12.5px; margin:2px 0 0; color:var(--muted)}
-    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .brandText .name{
+      font-size:15px;
+      font-weight:650;
+      margin:0;
+      letter-spacing:.1px;
+    }
+    .brandText .tag{
+      font-size:12.5px;
+      margin:2px 0 0;
+      color:var(--muted);
+      font-weight:400;
+    }
+
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
     .navLink{
       text-decoration:none;
       font-size:13px;
@@ -56,11 +105,13 @@
       padding:8px 10px;
       border-radius:999px;
       border:1px solid transparent;
+      white-space:nowrap;
     }
+
     .navLink:hover{
       color:var(--text);
       border-color:rgba(15,23,42,.10);
-      background:rgba(255,255,255,.7);
+      background:rgba(255,255,255,.72);
     }
 
     .card{
@@ -69,52 +120,85 @@
       border-radius:var(--radius);
       box-shadow: var(--shadow);
     }
+
     .hero{padding:28px}
-    .kicker{margin:0 0 10px; font-size:12.5px; color:var(--muted); letter-spacing:.2px}
-    .h1{
+
+    .kicker{
       margin:0 0 10px;
-      font-size:34px;
-      line-height:1.15;
-      letter-spacing:-.6px;
+      font-size:12.5px;
+      color:var(--muted);
+      letter-spacing:.2px;
     }
+
+    .h1{
+      font-family: Fraunces, ui-serif, Georgia, "Times New Roman", serif;
+      margin:0 0 10px;
+      font-size:36px;
+      line-height:1.08;
+      letter-spacing:-.4px;
+      font-weight:500;
+    }
+
     .lead{
       margin:0 0 18px;
       font-size:16px;
       color:var(--muted);
-      max-width: 70ch;
+      max-width: 72ch;
+      font-weight:400;
     }
-    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+
+    .ctaRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       padding:11px 14px;
-      border-radius:12px;
+      border-radius:999px;
       text-decoration:none;
-      font-weight:650;
+      font-weight:600;
       border:1px solid rgba(15,23,42,.10);
-      background:rgba(255,255,255,.9);
+      background:rgba(255,255,255,.92);
     }
+
     .btnPrimary{
-      border-color: rgba(29,78,216,.20);
+      border-color: rgba(29,78,216,.18);
       background: linear-gradient(135deg, rgba(29,78,216,.12), rgba(99,102,241,.10));
       color: var(--text);
     }
+
     .btn:hover{border-color:rgba(15,23,42,.18)}
 
     section{margin-top:16px}
     .sectionPad{padding:22px}
+
     .sectionTitle{
+      font-family: Fraunces, ui-serif, Georgia, "Times New Roman", serif;
       margin:0 0 10px;
       font-size:18px;
       letter-spacing:-.2px;
+      font-weight:500;
     }
+
     .sectionHint{
       margin:0 0 16px;
       color:var(--muted);
       font-size:14px;
-      max-width: 75ch;
+      max-width: 76ch;
+      font-weight:400;
     }
 
-    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
     .tile{
       border:1px solid var(--line);
       border-radius:16px;
@@ -122,43 +206,95 @@
       box-shadow: 0 10px 22px rgba(15,23,42,.04);
       padding:16px;
     }
-    .tile h3{margin:0 0 6px; font-size:14px}
-    .tile p{margin:0; color:var(--muted); font-size:13.5px; line-height:1.55}
+
+    .tile h3{
+      margin:0 0 6px;
+      font-size:14px;
+      font-weight:600;
+      letter-spacing:.1px;
+    }
+
+    .tile p{
+      margin:0;
+      color:var(--muted);
+      font-size:13.5px;
+      line-height:1.55;
+      font-weight:400;
+    }
 
     .track{
-      display:flex; gap:14px; flex-wrap:wrap; align-items:baseline;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:baseline;
       padding:16px;
       border-radius:16px;
       border:1px solid var(--line);
       background: linear-gradient(180deg, rgba(29,78,216,.06), rgba(255,255,255,0));
     }
-    .track strong{font-size:14px}
-    .track span{color:var(--muted); font-size:13.5px}
 
-    .who ul{margin:0; padding-left:18px; color:var(--muted)}
-    .who li{margin:6px 0; font-size:13.5px}
+    .track strong{
+      font-size:14px;
+      font-weight:600;
+    }
 
-    .contactGrid{display:grid; grid-template-columns: 1fr 1fr 1fr; gap:12px}
+    .track span{
+      color:var(--muted);
+      font-size:13.5px;
+      font-weight:400;
+    }
+
+    .who ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .who li{
+      margin:6px 0;
+      font-size:13.5px;
+    }
+
+    .contactGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:12px;
+    }
+
     .contactGrid .tile{height:100%}
+
     .qr{
-      width:150px; height:150px; object-fit:cover;
+      width:150px;
+      height:150px;
+      object-fit:cover;
       border-radius:14px;
       border:1px solid var(--line);
       background:#fff;
       box-shadow: 0 10px 22px rgba(15,23,42,.06);
-      display:block; margin:0 auto;
+      display:block;
+      margin:0 auto;
     }
-    .qrLabel{margin-top:8px; text-align:center; color:var(--muted); font-size:12.5px}
+
+    .qrLabel{
+      margin-top:8px;
+      text-align:center;
+      color:var(--muted);
+      font-size:12.5px;
+    }
 
     .footer{
       margin-top:18px;
       padding-top:16px;
       border-top:1px solid var(--line);
-      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
-      color:var(--muted); font-size:12px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:12px;
     }
 
-    /* Mobile: Email full width, then WeChat+WhatsApp side-by-side */
+    /* Mobile: Email full width, then WeChat + WhatsApp side-by-side */
     @media (max-width: 860px){
       .h1{font-size:30px}
       .grid3{grid-template-columns:1fr}
@@ -192,7 +328,7 @@
     <!-- HERO -->
     <div class="card hero">
       <p class="kicker">Established 1996</p>
-      <h1 class="h1">Global Education Advisory, Built on Trust.</h1>
+      <h1 class="h1">Global Education Advisory, Built on Trust</h1>
       <p class="lead">
         We support institutions and families navigating international education with clarity, discretion, and long-term perspective.
       </p>
@@ -232,7 +368,7 @@
         <p class="sectionHint">Credibility without noise — focused on outcomes and long-term relationships.</p>
 
         <div class="track">
-          <strong>Established 1996.</strong>
+          <strong>Established 1996</strong>
           <span>Independent, relationship-driven, and built for long-term outcomes.</span>
         </div>
       </div>
