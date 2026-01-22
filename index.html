@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,106 +11,134 @@
     :root{
       --bg:#f6f8ff;
       --card:#ffffff;
-      --text:#0b1220;
-      --muted:#4b5563;
-      --line:rgba(15,23,42,.12);
-      --accent:#2563eb;
-      --accent2:#7c3aed;
+      --text:#1f2937;            /* softer than black */
+      --muted:#6b7280;           /* softer gray */
+      --line:rgba(15,23,42,.10);
+      --shadow: 0 14px 34px rgba(15,23,42,.08);
+      --shadow2: 0 10px 24px rgba(15,23,42,.06);
+      --primary:#1d4ed8;
+      --primary2:#6d28d9;
+      --radius:22px;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 18% 8%, rgba(124,58,237,.10), transparent 60%),
-                  radial-gradient(1000px 500px at 82% 28%, rgba(37,99,235,.10), transparent 55%),
-                  var(--bg);
+      background:
+        radial-gradient(1200px 600px at 18% 8%, rgba(109,40,217,.10), transparent 60%),
+        radial-gradient(1000px 500px at 82% 28%, rgba(29,78,216,.10), transparent 55%),
+        var(--bg);
       color:var(--text);
-      line-height:1.45;
+      line-height:1.55;
     }
     a{color:inherit}
-    .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
-    header{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:24px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{
-      width:42px;height:42px;border-radius:14px;
-      background: linear-gradient(135deg, rgba(37,99,235,.95), rgba(124,58,237,.95));
-      box-shadow: 0 10px 26px rgba(15,23,42,.12);
-      display:grid;place-items:center;
-      font-weight:800;color:#ffffff;
-      letter-spacing:.5px;
-    }
+    .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 64px}
 
-    /* If your logo image has a white background, it will still look clean inside this white badge */
+    header{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:22px}
+    .brand{display:flex;gap:12px;align-items:center}
     .logoImgWrap{
-      width:42px;height:42px;border-radius:14px;
-      background:#ffffff;
-      border:1px solid var(--line);
-      box-shadow: 0 10px 26px rgba(15,23,42,.08);
-      display:grid;place-items:center;
-      overflow:hidden;
+      width:44px;height:44px;border-radius:14px;
+      background:#fff;border:1px solid var(--line);
+      box-shadow: var(--shadow2);
+      display:grid;place-items:center;overflow:hidden;
     }
-    .logoImg{width:34px;height:34px;object-fit:contain;display:block;}
+    .logoImg{width:36px;height:36px;object-fit:contain;display:block}
     .brand h1{font-size:16px;margin:0}
-    .brand p{margin:2px 0 0;color:var(--muted);font-size:12px}
-    .nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+    .brand p{margin:2px 0 0;color:var(--muted);font-size:12.5px}
+
+    .nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
     .chip{
       padding:9px 12px;border:1px solid var(--line);
       border-radius:999px;text-decoration:none;
-      background: rgba(255,255,255,.04);
+      background: rgba(255,255,255,.75);
       font-size:13px;
+      box-shadow: 0 6px 14px rgba(15,23,42,.04);
     }
-    .chip:hover{border-color:rgba(255,255,255,.22)}
+    .chip:hover{border-color:rgba(15,23,42,.18)}
 
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:stretch}
-    @media (max-width: 880px){.hero{grid-template-columns:1fr}}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:stretch}
+    @media (max-width: 920px){.hero{grid-template-columns:1fr}}
 
     .card{
       border:1px solid var(--line);
-      border-radius:22px;
+      border-radius:var(--radius);
       background: var(--card);
-      box-shadow: 0 12px 30px rgba(15,23,42,.10);
+      box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .card .pad{padding:22px}
+    .pad{padding:26px}
 
     .kicker{color:var(--muted);font-size:13px;margin:0 0 10px}
-    .title{font-size:34px;line-height:1.08;margin:0 0 12px;letter-spacing:-.5px}
+    .title{font-size:32px;line-height:1.12;margin:0 0 12px;letter-spacing:-.5px}
     .subtitle{color:var(--muted);font-size:16px;margin:0 0 18px}
+    .subtitle strong{color:var(--text);font-weight:750}
 
-    .ctaRow{display:flex;gap:12px;flex-wrap:wrap}
+    .sectionTitle{
+      font-size:22px;
+      margin:0 0 10px;
+      letter-spacing:-.2px;
+    }
+    .sectionHint{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap}
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 14px;border-radius:14px;text-decoration:none;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      font-weight:600;
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:11px 14px;border-radius:14px;text-decoration:none;
+      border:1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.85);
+      font-weight:650;
+      box-shadow: 0 8px 16px rgba(15,23,42,.05);
     }
-    .btn.primary{
-      border-color: rgba(125,211,252,.35);
-      background: linear-gradient(135deg, rgba(125,211,252,.20), rgba(167,139,250,.18));
+    .btn.solid{
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      color:#fff;
+      border-color: rgba(29,78,216,.28);
     }
-    .btn:hover{border-color:rgba(255,255,255,.25)}
+    .btn.soft{
+      background: linear-gradient(135deg, rgba(29,78,216,.10), rgba(109,40,217,.10));
+      border-color: rgba(29,78,216,.18);
+    }
+    .btn:hover{border-color:rgba(15,23,42,.18)}
 
-    .mini{display:grid;grid-template-columns:1fr;gap:12px}
-    .mini .box{border:1px solid var(--line);border-radius:18px;background:rgba(0,0,0,.12);padding:14px}
+    .mini{display:grid;grid-template-columns:1fr;gap:10px}
+    .box{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background: linear-gradient(180deg, rgba(29,78,216,.05), rgba(109,40,217,.04));
+      padding:14px;
+    }
     .box h3{margin:0 0 6px;font-size:14px}
     .box p{margin:0;color:var(--muted);font-size:13px}
 
-    section{margin-top:18px}
+    section{margin-top:16px}
     .grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px}
     @media (max-width: 980px){.grid{grid-template-columns:1fr}}
-    .grid .item{padding:16px;border-radius:18px;border:1px solid var(--line);background:rgba(0,0,0,.10)}
+
+    .item{
+      padding:16px;border-radius:18px;border:1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(15,23,42,.04);
+    }
     .item h3{margin:0 0 8px;font-size:15px}
     .item ul{margin:0;padding-left:18px;color:var(--muted)}
-    .item li{margin:4px 0;font-size:13px}
+    .item li{margin:5px 0;font-size:13px}
 
-    .footer{margin-top:22px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    /* QR display */
+    .qrImg{
+      width:170px;height:170px;object-fit:cover;
+      border-radius:14px;border:1px solid var(--line);
+      background:#fff;
+      box-shadow: 0 10px 24px rgba(15,23,42,.06);
+      display:block;margin:0 auto;
+    }
+    .qrLabel{margin-top:8px;color:var(--muted);font-size:12.5px;text-align:center}
+
     .hr{height:1px;background:var(--line);margin:18px 0 0}
-
-    /* ===== QUICK EDIT SECTION (Lucy: adjust here) ===== */
-    /* 1) Change brand name / email / phone / WeChat / WhatsApp in the HTML body below */
-    /* 2) Replace the “TEMPORARY PAGE” notice if you want */
-    /* 3) Update services + cities + CTA links */
+    .footer{margin-top:18px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   </style>
 </head>
 
@@ -127,22 +156,26 @@
       </div>
       <nav class="nav">
         <a class="chip" href="#services">Expertise</a>
+        <a class="chip" href="#about">Collaboration</a>
         <a class="chip" href="#contact">Contact</a>
-        <a class="chip" href="#about">About</a>
       </nav>
     </header>
 
     <div class="hero">
       <div class="card">
         <div class="pad">
-          <p class="kicker">By appointment • Institutional inquiries welcome</p>
           <h2 class="title">A Heritage of Excellence</h2>
-          <p class="subtitle">Since 1996, Haiyi has supported discerning families and world‑class institutions. We created iBAF in 2005 and have served as a long‑term execution partner for organizations including TABS and Swiss Learning.</p>
+          <p class="subtitle">
+            <strong>A Heritage of Excellence.</strong>
+            Since 1996, Haiyi has supported discerning families and world-class institutions.
+            By pioneering and managing the region’s premier platforms for international admissions,
+            we serve as a vital long-term execution partner for prestigious global educational networks and academic alliances,
+            driving a shared vision of excellence across borders and generations.
+          </p>
           <div class="ctaRow">
-            <!-- Update these links (mailto / whatsapp / wechat QR) -->
-            <a class="btn primary" href="mailto:info@haiyi.org">Email: info@haiyi.org</a>
+            <a class="btn solid" href="mailto:info@haiyi.org">Email info@haiyi.org</a>
             <a class="btn" href="#contact">Contact</a>
-            <a class="btn" href="#services">Our expertise</a>
+            <a class="btn soft" href="#services">What we do</a>
           </div>
         </div>
       </div>
@@ -158,8 +191,8 @@
             <p>Canada • USA • United Kingdom • Switzerland • Australia • China</p>
           </div>
           <div class="box">
-            <h3>Future-focused</h3>
-            <p>Haiyi is in a phase of strategic reorganization and welcomes partnership inquiries by appointment.</p>
+            <h3>Our focus</h3>
+            <p>Institutional partnerships and bespoke advisory, built on long-term trust and results.</p>
           </div>
         </div>
       </div>
@@ -167,21 +200,23 @@
 
     <section id="services" class="card">
       <div class="pad">
-        <p class="kicker">What we do</p>
+        <h3 class="sectionTitle">What we do</h3>
+        <p class="sectionHint">Institutional partnerships and bespoke advisory, delivered with discretion and rigor.</p>
+
         <div class="grid">
           <div class="item">
             <h3>Collective expertise</h3>
             <ul>
-              <li>Multi‑disciplinary team: legal, business, investment &amp; strategy</li>
-              <li>Clear, discreet execution for complex cross‑border work</li>
-              <li>High‑trust, long‑term relationships</li>
+              <li>Multi-disciplinary team: legal, business, investment &amp; strategy</li>
+              <li>Clear, discreet execution for complex cross-border work</li>
+              <li>High-trust, long-term relationships</li>
             </ul>
           </div>
           <div class="item">
             <h3>Institutional partnerships</h3>
             <ul>
               <li>China strategy &amp; market entry for K–12 and higher education</li>
-              <li>Joint programs, sister‑school affiliations &amp; stakeholder alignment</li>
+              <li>Joint programs, sister-school affiliations &amp; stakeholder alignment</li>
               <li>Representation and partnership execution</li>
             </ul>
           </div>
@@ -190,7 +225,7 @@
             <ul>
               <li>Education pathway design for families</li>
               <li>Relocation strategy with global benchmarks</li>
-              <li>Discreet, senior‑level guidance</li>
+              <li>Discreet, senior-level guidance</li>
             </ul>
           </div>
         </div>
@@ -199,37 +234,39 @@
 
     <section id="about" class="card">
       <div class="pad">
-        <p class="kicker">Open for collaboration</p>
+        <h3 class="sectionTitle">Open for collaboration</h3>
+        <p class="sectionHint">We welcome aligned institutions, partners, and long-term colleagues.</p>
+
         <p style="margin:0;color:var(--muted)">
           Haiyi is in a phase of strategic reorganization. We are not running public marketing campaigns, but we remain active for the right partners and projects.
-          Inquiries welcome for joint programs, cross‑cultural consulting, and strategic institutional representation.
+          Inquiries welcome for joint programs, cross-cultural consulting, and strategic institutional representation.
         </p>
       </div>
     </section>
 
     <section id="contact" class="card">
       <div class="pad">
-        <p class="kicker">Contact</p>
+        <h3 class="sectionTitle">Contact</h3>
+        <p class="sectionHint">For institutional inquiries, partnerships, and strategic conversations.</p>
+
         <div class="grid" style="grid-template-columns:repeat(3,1fr)">
           <div class="item">
             <h3>Email</h3>
-            <ul>
-              <li><a href="mailto:info@haiyi.org">info@haiyi.org</a></li>
-            </ul>
+            <p style="margin:0;color:var(--muted);font-size:13px;">
+              <a href="mailto:info@haiyi.org">info@haiyi.org</a>
+            </p>
           </div>
-          <div class="item">
-            <h3>WeChat</h3>
-            <ul>
-              <li><img src="wechat-qr.jpeg" alt="WeChat QR" style="width:160px;height:160px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04)" /></li>
-              <li style="margin-top:6px;color:var(--muted)">WeChat</li>
-            </ul>
+
+          <div class="item" style="text-align:center;">
+            <h3 style="margin-bottom:10px;">WeChat</h3>
+            <img class="qrImg" src="./wechat-qr.jpeg" alt="WeChat QR" />
+            <div class="qrLabel">WeChat</div>
           </div>
-          <div class="item">
-            <h3>WhatsApp</h3>
-            <ul>
-              <li><img src="whatsapp-qr.jpeg" alt="WhatsApp QR" style="width:160px;height:160px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04)" /></li>
-              <li style="margin-top:6px;color:var(--muted)">WhatsApp</li>
-            </ul>
+
+          <div class="item" style="text-align:center;">
+            <h3 style="margin-bottom:10px;">WhatsApp</h3>
+            <img class="qrImg" src="./whatsapp-qr.jpeg" alt="WhatsApp QR" />
+            <div class="qrLabel">WhatsApp</div>
           </div>
         </div>
 
@@ -247,3 +284,4 @@
   </script>
 </body>
 </html>
+```
