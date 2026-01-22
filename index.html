@@ -3,30 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Haiyi Education Group — Global Education Advisory." />
+  <meta name="description" content="Haiyi Education Group Global Education Advisory" />
   <title>Haiyi Education Group</title>
   <link rel="icon" href="favicon.ico" />
 
-  <!-- Editorial luxury type -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* Warm, premium canvas */
-      --bg1:#fbf7f0;      /* ivory */
-      --bg2:#f3efe7;      /* warm stone */
-      --paper:#fffdf8;    /* warm white surface */
+      --bg1:#fbf7f0;
+      --bg2:#f3efe7;
 
-      /* Ink */
-      --ink:#111827;      /* deep ink */
-      --muted:#5b6472;    /* softer slate */
+      --ink:#111827;
+      --muted:#5b6472;
 
-      /* Brand-friendly accents (match your logo’s blue/red without screaming) */
       --navy:#12243a;
-      --burg:#6b1f2b;     /* subtle burgundy */
-      --gold:#b08a4a;     /* champagne gold */
+      --burg:#6b1f2b;
+      --gold:#b08a4a;
 
       --line:rgba(17,24,39,.10);
       --shadow: 0 18px 60px rgba(17,24,39,.08);
@@ -37,6 +32,7 @@
     }
 
     *{box-sizing:border-box}
+
     body{
       margin:0;
       font-family: Manrope, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -51,7 +47,6 @@
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:34px 18px 80px}
 
-    /* Header */
     header{
       display:flex;
       justify-content:space-between;
@@ -59,6 +54,7 @@
       gap:18px;
       padding:8px 2px 22px;
     }
+
     .brand{
       display:flex;
       align-items:center;
@@ -66,9 +62,9 @@
       min-width:0;
     }
 
-    /* Make logo sit on warm neutral, not bright white */
     .logoWrap{
-      width:54px; height:54px;
+      width:54px;
+      height:54px;
       border-radius:18px;
       background: linear-gradient(180deg, rgba(255,253,248,.95), rgba(255,253,248,.75));
       border:1px solid rgba(17,24,39,.10);
@@ -78,11 +74,13 @@
       overflow:hidden;
       flex:0 0 auto;
     }
+
     .logoWrap img{
-      width:44px; height:44px;
+      width:44px;
+      height:44px;
       object-fit:contain;
       display:block;
-      filter: saturate(1.05) contrast(1.02); /* gentle lift */
+      filter: saturate(1.05) contrast(1.02);
     }
 
     .brandText .name{
@@ -92,6 +90,7 @@
       font-size:15px;
       color:var(--navy);
     }
+
     .brandText .tag{
       margin:3px 0 0;
       font-size:12.5px;
@@ -105,6 +104,7 @@
       flex-wrap:wrap;
       justify-content:flex-end;
     }
+
     .navLink{
       text-decoration:none;
       font-size:13px;
@@ -114,13 +114,13 @@
       border:1px solid transparent;
       transition: all .15s ease;
     }
+
     .navLink:hover{
       border-color: rgba(17,24,39,.12);
       background: rgba(255,253,248,.65);
       color: var(--navy);
     }
 
-    /* Main surface (less “cards”, more editorial panel) */
     .panel{
       background: linear-gradient(180deg, rgba(255,253,248,.92), rgba(255,253,248,.82));
       border:1px solid rgba(17,24,39,.10);
@@ -134,11 +134,12 @@
       position:relative;
     }
 
-    /* Subtle brand line */
     .hero:before{
       content:"";
       position:absolute;
-      top:0; left:0; right:0;
+      top:0;
+      left:0;
+      right:0;
       height:3px;
       background: linear-gradient(90deg, rgba(18,36,58,.9), rgba(176,138,74,.75), rgba(107,31,43,.85));
       opacity:.9;
@@ -190,7 +191,11 @@
       background: rgba(255,253,248,.85);
       transition: transform .12s ease, border-color .12s ease;
     }
-    .btn:hover{border-color: rgba(17,24,39,.22); transform: translateY(-1px);}
+
+    .btn:hover{
+      border-color: rgba(17,24,39,.22);
+      transform: translateY(-1px);
+    }
 
     .btnPrimary{
       border-color: rgba(18,36,58,.18);
@@ -204,7 +209,6 @@
       color: var(--navy);
     }
 
-    /* Sections */
     section{margin-top:16px}
     .sectionPad{padding:26px 34px}
 
@@ -216,6 +220,7 @@
       color:var(--navy);
       letter-spacing:-.2px;
     }
+
     .sectionHint{
       margin:0 0 18px;
       color:rgba(17,24,39,.66);
@@ -223,16 +228,17 @@
       max-width: 80ch;
     }
 
-    /* Elegant list blocks (less boxy than cards) */
     .cols{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap:18px;
     }
+
     .block{
       padding:14px 0 0;
       border-top: 1px solid rgba(17,24,39,.12);
     }
+
     .block h3{
       margin:10px 0 6px;
       font-size:13px;
@@ -240,6 +246,7 @@
       text-transform:uppercase;
       color:rgba(18,36,58,.78);
     }
+
     .block p{
       margin:0;
       color:rgba(17,24,39,.70);
@@ -256,19 +263,20 @@
       margin:0;
     }
 
-    /* Contact */
     .contactGrid{
       display:grid;
       grid-template-columns: 1.2fr .9fr .9fr;
       gap:18px;
       align-items:start;
     }
+
     .contactCard{
       background: rgba(255,253,248,.70);
       border:1px solid rgba(17,24,39,.10);
       border-radius:18px;
       padding:16px;
     }
+
     .contactCard h3{
       margin:0 0 8px;
       font-size:13px;
@@ -276,14 +284,17 @@
       text-transform:uppercase;
       color:rgba(18,36,58,.78);
     }
+
     .contactCard p{
       margin:0;
       color:rgba(17,24,39,.68);
       font-size:14px;
       line-height:1.7;
     }
+
     .qr{
-      width:150px; height:150px;
+      width:150px;
+      height:150px;
       object-fit:cover;
       border-radius:16px;
       border:1px solid rgba(17,24,39,.12);
@@ -292,13 +303,16 @@
       margin:0 auto;
       box-shadow: var(--shadow2);
     }
+
+    /* Bottom labels only, use original system font and normal casing */
     .qrLabel{
       margin-top:10px;
       text-align:center;
-      color:rgba(17,24,39,.65);
-      font-size:12.5px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
+      color:rgba(17,24,39,.62);
+      font-size:13px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      letter-spacing:0;
+      text-transform:none;
     }
 
     .footer{
@@ -313,7 +327,6 @@
       font-size:12px;
     }
 
-    /* Mobile */
     @media (max-width: 920px){
       .h1{font-size:36px}
       .hero{padding:32px 20px 26px}
@@ -347,12 +360,11 @@
     </header>
 
     <div class="panel">
-      <!-- HERO -->
       <div class="hero">
         <p class="kicker">Established 1996</p>
-        <h1 class="h1">Global Education Advisory, Built on Trust</h1>
+        <h1 class="h1">Global Education Advisory Built on Trust</h1>
         <p class="lead">
-          We support institutions and families navigating international education with clarity, discretion, and long-term perspective.
+          We support institutions and families navigating international education with clarity, discretion, and long term perspective
         </p>
         <div class="ctaRow">
           <a class="btn btnPrimary" href="mailto:info@haiyi.org">Contact Haiyi</a>
@@ -360,85 +372,77 @@
         </div>
       </div>
 
-      <!-- EXPERTISE -->
       <section id="expertise">
         <div class="sectionPad">
           <h2 class="sectionTitle">What we do</h2>
-          <p class="sectionHint">Institutional partnerships and bespoke advisory, delivered with discretion and rigor.</p>
+          <p class="sectionHint">Institutional partnerships and bespoke advisory delivered with discretion and rigor</p>
 
           <div class="cols">
             <div class="block">
               <h3>Institutional Partnerships</h3>
-              <p>Strategic support for schools, networks, and academic alliances engaging with China and global markets.</p>
+              <p>Strategic support for schools networks and academic alliances engaging with China and global markets</p>
             </div>
             <div class="block">
               <h3>Family Advisory</h3>
-              <p>Personalized guidance for education pathways, relocation planning, and long-term decision making.</p>
+              <p>Personalized guidance for education pathways relocation planning and long term decision making</p>
             </div>
             <div class="block">
               <h3>Project Execution</h3>
-              <p>Bilingual coordination and on-the-ground delivery for complex cross-border initiatives.</p>
+              <p>Bilingual coordination and on the ground delivery for complex cross border initiatives</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- TRACK -->
       <section id="track">
         <div class="sectionPad">
           <h2 class="sectionTitle">A quiet track record</h2>
-          <p class="sectionHint">Credibility without noise — focused on outcomes and long-term relationships.</p>
-
-          <p class="note"><strong>Established 1996.</strong> Independent, relationship-driven, and built for long-term outcomes.</p>
+          <p class="sectionHint">Credibility without noise focused on outcomes and long term relationships</p>
+          <p class="note"><strong>Established 1996</strong> Independent relationship driven and built for long term outcomes</p>
         </div>
       </section>
 
-      <!-- WHO -->
       <section>
         <div class="sectionPad">
           <h2 class="sectionTitle">Who we work with</h2>
-          <p class="sectionHint">A selective set of partners — institutions, families, and teams who value trust and clarity.</p>
+          <p class="sectionHint">A selective set of partners institutions families and teams who value trust and clarity</p>
 
           <div class="cols">
             <div class="block">
               <h3>Institutions</h3>
-              <p>Educational institutions and associations seeking long-term engagement and aligned partnerships.</p>
+              <p>Educational institutions and associations seeking long term engagement and aligned partnerships</p>
             </div>
             <div class="block">
               <h3>Families</h3>
-              <p>Families planning international pathways with a long-term view and careful decision-making.</p>
+              <p>Families planning international pathways with a long term view and careful decision making</p>
             </div>
             <div class="block">
               <h3>Partners</h3>
-              <p>Teams requiring discreet, bilingual coordination and reliable execution across borders.</p>
+              <p>Teams requiring discreet bilingual coordination and reliable execution across borders</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- CONTACT -->
       <section id="contact">
         <div class="sectionPad">
           <h2 class="sectionTitle">Contact</h2>
-          <p class="sectionHint">For institutional inquiries, partnerships, and strategic conversations.</p>
+          <p class="sectionHint">For institutional inquiries partnerships and strategic conversations</p>
 
           <div class="contactGrid">
             <div class="contactCard">
               <h3>Email</h3>
-              <p>
-                <a href="mailto:info@haiyi.org">info@haiyi.org</a><br/>
-                Responses typically within 1–2 business days.
-              </p>
+              <p><a href="mailto:info@haiyi.org">info@haiyi.org</a></p>
             </div>
 
+            <!-- WeChat: no top label, bottom label only -->
             <div class="contactCard" style="text-align:center;">
-              <h3>WeChat</h3>
               <img class="qr" src="wechat-qr.jpeg" alt="WeChat QR code" />
               <div class="qrLabel">WeChat</div>
             </div>
 
+            <!-- WhatsApp: no top label, bottom label only -->
             <div class="contactCard" style="text-align:center;">
-              <h3>WhatsApp</h3>
               <img class="qr" src="whatsapp-qr.jpeg" alt="WhatsApp QR code" />
               <div class="qrLabel">WhatsApp</div>
             </div>
