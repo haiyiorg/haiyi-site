@@ -7,299 +7,320 @@
   <title>Haiyi Education Group</title>
   <link rel="icon" href="favicon.ico" />
 
-  <!-- Quiet luxury typography: Serif headlines + clean body font -->
+  <!-- Editorial luxury type -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#fbfcff;
-      --card:#ffffff;
-      --text:#1f2937;
-      --muted:#6b7280;
-      --line:rgba(15,23,42,.10);
-      --shadow: 0 14px 34px rgba(15,23,42,.06);
-      --shadow2: 0 10px 24px rgba(15,23,42,.05);
-      --accent:#1d4ed8;
-      --radius:18px;
-      --max: 980px;
+      /* Warm, premium canvas */
+      --bg1:#fbf7f0;      /* ivory */
+      --bg2:#f3efe7;      /* warm stone */
+      --paper:#fffdf8;    /* warm white surface */
+
+      /* Ink */
+      --ink:#111827;      /* deep ink */
+      --muted:#5b6472;    /* softer slate */
+
+      /* Brand-friendly accents (match your logo’s blue/red without screaming) */
+      --navy:#12243a;
+      --burg:#6b1f2b;     /* subtle burgundy */
+      --gold:#b08a4a;     /* champagne gold */
+
+      --line:rgba(17,24,39,.10);
+      --shadow: 0 18px 60px rgba(17,24,39,.08);
+      --shadow2: 0 10px 30px rgba(17,24,39,.07);
+
+      --radius:22px;
+      --max: 1020px;
     }
 
     *{box-sizing:border-box}
-
     body{
       margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text);
+      font-family: Manrope, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--ink);
       background:
-        radial-gradient(1100px 520px at 15% 6%, rgba(29,78,216,.08), transparent 58%),
-        radial-gradient(900px 460px at 85% 18%, rgba(99,102,241,.07), transparent 55%),
-        var(--bg);
+        radial-gradient(1200px 520px at 18% 10%, rgba(18,36,58,.10), transparent 55%),
+        radial-gradient(900px 500px at 84% 18%, rgba(107,31,43,.08), transparent 60%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
       line-height:1.65;
     }
 
     a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:30px 18px 70px}
+    .wrap{max-width:var(--max); margin:0 auto; padding:34px 18px 80px}
 
+    /* Header */
     header{
       display:flex;
-      align-items:center;
       justify-content:space-between;
-      gap:16px;
-      padding:6px 2px 18px;
+      align-items:center;
+      gap:18px;
+      padding:8px 2px 22px;
     }
-
     .brand{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:14px;
       min-width:0;
     }
 
+    /* Make logo sit on warm neutral, not bright white */
     .logoWrap{
-      width:46px;
-      height:46px;
-      border-radius:14px;
-      background:#fff;
-      border:1px solid var(--line);
+      width:54px; height:54px;
+      border-radius:18px;
+      background: linear-gradient(180deg, rgba(255,253,248,.95), rgba(255,253,248,.75));
+      border:1px solid rgba(17,24,39,.10);
       box-shadow: var(--shadow2);
       display:grid;
       place-items:center;
       overflow:hidden;
       flex:0 0 auto;
     }
-
     .logoWrap img{
-      width:38px;
-      height:38px;
+      width:44px; height:44px;
       object-fit:contain;
       display:block;
+      filter: saturate(1.05) contrast(1.02); /* gentle lift */
     }
 
-    .brandText{min-width:0}
     .brandText .name{
-      font-size:15px;
-      font-weight:650;
       margin:0;
-      letter-spacing:.1px;
+      font-weight:600;
+      letter-spacing:.2px;
+      font-size:15px;
+      color:var(--navy);
     }
     .brandText .tag{
+      margin:3px 0 0;
       font-size:12.5px;
-      margin:2px 0 0;
       color:var(--muted);
       font-weight:400;
     }
 
     nav{
       display:flex;
-      gap:10px;
+      gap:12px;
       flex-wrap:wrap;
       justify-content:flex-end;
     }
-
     .navLink{
       text-decoration:none;
       font-size:13px;
-      color:var(--muted);
+      color:rgba(18,36,58,.78);
       padding:8px 10px;
       border-radius:999px;
       border:1px solid transparent;
-      white-space:nowrap;
+      transition: all .15s ease;
     }
-
     .navLink:hover{
-      color:var(--text);
-      border-color:rgba(15,23,42,.10);
-      background:rgba(255,255,255,.72);
+      border-color: rgba(17,24,39,.12);
+      background: rgba(255,253,248,.65);
+      color: var(--navy);
     }
 
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
+    /* Main surface (less “cards”, more editorial panel) */
+    .panel{
+      background: linear-gradient(180deg, rgba(255,253,248,.92), rgba(255,253,248,.82));
+      border:1px solid rgba(17,24,39,.10);
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
+      overflow:hidden;
     }
 
-    .hero{padding:28px}
+    .hero{
+      padding:36px 34px 30px;
+      position:relative;
+    }
+
+    /* Subtle brand line */
+    .hero:before{
+      content:"";
+      position:absolute;
+      top:0; left:0; right:0;
+      height:3px;
+      background: linear-gradient(90deg, rgba(18,36,58,.9), rgba(176,138,74,.75), rgba(107,31,43,.85));
+      opacity:.9;
+    }
 
     .kicker{
       margin:0 0 10px;
-      font-size:12.5px;
-      color:var(--muted);
-      letter-spacing:.2px;
+      font-size:12px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:rgba(18,36,58,.60);
     }
 
     .h1{
-      font-family: Fraunces, ui-serif, Georgia, "Times New Roman", serif;
+      font-family: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", serif;
       margin:0 0 10px;
-      font-size:36px;
-      line-height:1.08;
-      letter-spacing:-.4px;
-      font-weight:500;
+      font-size:44px;
+      line-height:1.05;
+      letter-spacing:-.6px;
+      font-weight:600;
+      color:var(--navy);
     }
 
     .lead{
-      margin:0 0 18px;
+      margin:0 0 20px;
       font-size:16px;
-      color:var(--muted);
-      max-width: 72ch;
+      color:rgba(17,24,39,.70);
+      max-width: 78ch;
       font-weight:400;
     }
 
     .ctaRow{
       display:flex;
-      gap:10px;
+      gap:12px;
       flex-wrap:wrap;
       align-items:center;
+      margin-top:10px;
     }
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:11px 14px;
+      padding:12px 16px;
       border-radius:999px;
       text-decoration:none;
       font-weight:600;
-      border:1px solid rgba(15,23,42,.10);
-      background:rgba(255,255,255,.92);
+      border:1px solid rgba(17,24,39,.14);
+      background: rgba(255,253,248,.85);
+      transition: transform .12s ease, border-color .12s ease;
     }
+    .btn:hover{border-color: rgba(17,24,39,.22); transform: translateY(-1px);}
 
     .btnPrimary{
-      border-color: rgba(29,78,216,.18);
-      background: linear-gradient(135deg, rgba(29,78,216,.12), rgba(99,102,241,.10));
-      color: var(--text);
+      border-color: rgba(18,36,58,.18);
+      background: linear-gradient(135deg, rgba(18,36,58,.92), rgba(18,36,58,.78));
+      color:#fff;
     }
 
-    .btn:hover{border-color:rgba(15,23,42,.18)}
+    .btnGhost{
+      background: transparent;
+      border-color: rgba(17,24,39,.14);
+      color: var(--navy);
+    }
 
+    /* Sections */
     section{margin-top:16px}
-    .sectionPad{padding:22px}
+    .sectionPad{padding:26px 34px}
 
     .sectionTitle{
-      font-family: Fraunces, ui-serif, Georgia, "Times New Roman", serif;
-      margin:0 0 10px;
-      font-size:18px;
+      font-family: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", serif;
+      margin:0 0 8px;
+      font-size:24px;
+      font-weight:600;
+      color:var(--navy);
       letter-spacing:-.2px;
-      font-weight:500;
     }
-
     .sectionHint{
-      margin:0 0 16px;
-      color:var(--muted);
-      font-size:14px;
-      max-width: 76ch;
-      font-weight:400;
+      margin:0 0 18px;
+      color:rgba(17,24,39,.66);
+      font-size:14.5px;
+      max-width: 80ch;
     }
 
-    .grid3{
+    /* Elegant list blocks (less boxy than cards) */
+    .cols{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
+      grid-template-columns: repeat(3, 1fr);
+      gap:18px;
     }
-
-    .tile{
-      border:1px solid var(--line);
-      border-radius:16px;
-      background:#fff;
-      box-shadow: 0 10px 22px rgba(15,23,42,.04);
-      padding:16px;
+    .block{
+      padding:14px 0 0;
+      border-top: 1px solid rgba(17,24,39,.12);
     }
-
-    .tile h3{
-      margin:0 0 6px;
-      font-size:14px;
-      font-weight:600;
-      letter-spacing:.1px;
+    .block h3{
+      margin:10px 0 6px;
+      font-size:13px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:rgba(18,36,58,.78);
     }
-
-    .tile p{
+    .block p{
       margin:0;
-      color:var(--muted);
-      font-size:13.5px;
-      line-height:1.55;
-      font-weight:400;
-    }
-
-    .track{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      align-items:baseline;
-      padding:16px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(29,78,216,.06), rgba(255,255,255,0));
-    }
-
-    .track strong{
+      color:rgba(17,24,39,.70);
       font-size:14px;
-      font-weight:600;
+      line-height:1.7;
     }
 
-    .track span{
-      color:var(--muted);
-      font-size:13.5px;
-      font-weight:400;
-    }
-
-    .who ul{
+    .note{
+      border-left:3px solid rgba(176,138,74,.55);
+      padding-left:14px;
+      color:rgba(17,24,39,.68);
+      font-size:14.5px;
+      line-height:1.75;
       margin:0;
-      padding-left:18px;
-      color:var(--muted);
     }
 
-    .who li{
-      margin:6px 0;
-      font-size:13.5px;
-    }
-
+    /* Contact */
     .contactGrid{
       display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:12px;
+      grid-template-columns: 1.2fr .9fr .9fr;
+      gap:18px;
+      align-items:start;
     }
-
-    .contactGrid .tile{height:100%}
-
+    .contactCard{
+      background: rgba(255,253,248,.70);
+      border:1px solid rgba(17,24,39,.10);
+      border-radius:18px;
+      padding:16px;
+    }
+    .contactCard h3{
+      margin:0 0 8px;
+      font-size:13px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:rgba(18,36,58,.78);
+    }
+    .contactCard p{
+      margin:0;
+      color:rgba(17,24,39,.68);
+      font-size:14px;
+      line-height:1.7;
+    }
     .qr{
-      width:150px;
-      height:150px;
+      width:150px; height:150px;
       object-fit:cover;
-      border-radius:14px;
-      border:1px solid var(--line);
+      border-radius:16px;
+      border:1px solid rgba(17,24,39,.12);
       background:#fff;
-      box-shadow: 0 10px 22px rgba(15,23,42,.06);
       display:block;
       margin:0 auto;
+      box-shadow: var(--shadow2);
     }
-
     .qrLabel{
-      margin-top:8px;
+      margin-top:10px;
       text-align:center;
-      color:var(--muted);
+      color:rgba(17,24,39,.65);
       font-size:12.5px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
     }
 
     .footer{
-      margin-top:18px;
+      margin-top:22px;
       padding-top:16px;
-      border-top:1px solid var(--line);
+      border-top:1px solid rgba(17,24,39,.10);
       display:flex;
       justify-content:space-between;
       gap:10px;
       flex-wrap:wrap;
-      color:var(--muted);
+      color:rgba(17,24,39,.55);
       font-size:12px;
     }
 
-    /* Mobile: Email full width, then WeChat + WhatsApp side-by-side */
-    @media (max-width: 860px){
-      .h1{font-size:30px}
-      .grid3{grid-template-columns:1fr}
+    /* Mobile */
+    @media (max-width: 920px){
+      .h1{font-size:36px}
+      .hero{padding:32px 20px 26px}
+      .sectionPad{padding:22px 20px}
+      .cols{grid-template-columns:1fr}
       .contactGrid{grid-template-columns:1fr 1fr}
-      .contactGrid .tile:first-child{grid-column:1 / -1}
+      .contactGrid .contactCard:first-child{grid-column:1 / -1}
       .qr{width:140px; height:140px}
     }
   </style>
@@ -325,103 +346,111 @@
       </nav>
     </header>
 
-    <!-- HERO -->
-    <div class="card hero">
-      <p class="kicker">Established 1996</p>
-      <h1 class="h1">Global Education Advisory, Built on Trust</h1>
-      <p class="lead">
-        We support institutions and families navigating international education with clarity, discretion, and long-term perspective.
-      </p>
-      <div class="ctaRow">
-        <a class="btn btnPrimary" href="mailto:info@haiyi.org">Contact Haiyi</a>
-        <a class="btn" href="#expertise">What we do</a>
+    <div class="panel">
+      <!-- HERO -->
+      <div class="hero">
+        <p class="kicker">Established 1996</p>
+        <h1 class="h1">Global Education Advisory, Built on Trust</h1>
+        <p class="lead">
+          We support institutions and families navigating international education with clarity, discretion, and long-term perspective.
+        </p>
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="mailto:info@haiyi.org">Contact Haiyi</a>
+          <a class="btn btnGhost" href="#expertise">What we do</a>
+        </div>
       </div>
+
+      <!-- EXPERTISE -->
+      <section id="expertise">
+        <div class="sectionPad">
+          <h2 class="sectionTitle">What we do</h2>
+          <p class="sectionHint">Institutional partnerships and bespoke advisory, delivered with discretion and rigor.</p>
+
+          <div class="cols">
+            <div class="block">
+              <h3>Institutional Partnerships</h3>
+              <p>Strategic support for schools, networks, and academic alliances engaging with China and global markets.</p>
+            </div>
+            <div class="block">
+              <h3>Family Advisory</h3>
+              <p>Personalized guidance for education pathways, relocation planning, and long-term decision making.</p>
+            </div>
+            <div class="block">
+              <h3>Project Execution</h3>
+              <p>Bilingual coordination and on-the-ground delivery for complex cross-border initiatives.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRACK -->
+      <section id="track">
+        <div class="sectionPad">
+          <h2 class="sectionTitle">A quiet track record</h2>
+          <p class="sectionHint">Credibility without noise — focused on outcomes and long-term relationships.</p>
+
+          <p class="note"><strong>Established 1996.</strong> Independent, relationship-driven, and built for long-term outcomes.</p>
+        </div>
+      </section>
+
+      <!-- WHO -->
+      <section>
+        <div class="sectionPad">
+          <h2 class="sectionTitle">Who we work with</h2>
+          <p class="sectionHint">A selective set of partners — institutions, families, and teams who value trust and clarity.</p>
+
+          <div class="cols">
+            <div class="block">
+              <h3>Institutions</h3>
+              <p>Educational institutions and associations seeking long-term engagement and aligned partnerships.</p>
+            </div>
+            <div class="block">
+              <h3>Families</h3>
+              <p>Families planning international pathways with a long-term view and careful decision-making.</p>
+            </div>
+            <div class="block">
+              <h3>Partners</h3>
+              <p>Teams requiring discreet, bilingual coordination and reliable execution across borders.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="sectionPad">
+          <h2 class="sectionTitle">Contact</h2>
+          <p class="sectionHint">For institutional inquiries, partnerships, and strategic conversations.</p>
+
+          <div class="contactGrid">
+            <div class="contactCard">
+              <h3>Email</h3>
+              <p>
+                <a href="mailto:info@haiyi.org">info@haiyi.org</a><br/>
+                Responses typically within 1–2 business days.
+              </p>
+            </div>
+
+            <div class="contactCard" style="text-align:center;">
+              <h3>WeChat</h3>
+              <img class="qr" src="wechat-qr.jpeg" alt="WeChat QR code" />
+              <div class="qrLabel">WeChat</div>
+            </div>
+
+            <div class="contactCard" style="text-align:center;">
+              <h3>WhatsApp</h3>
+              <img class="qr" src="whatsapp-qr.jpeg" alt="WhatsApp QR code" />
+              <div class="qrLabel">WhatsApp</div>
+            </div>
+          </div>
+
+          <div class="footer">
+            <div>© <span id="y"></span> Haiyi Education Group</div>
+            <div><a class="navLink" href="#">Back to top</a></div>
+          </div>
+        </div>
+      </section>
     </div>
-
-    <!-- EXPERTISE -->
-    <section id="expertise" class="card">
-      <div class="sectionPad">
-        <h2 class="sectionTitle">What we do</h2>
-        <p class="sectionHint">Institutional partnerships and bespoke advisory, delivered with discretion and rigor.</p>
-
-        <div class="grid3">
-          <div class="tile">
-            <h3>Institutional Partnerships</h3>
-            <p>Strategic support for schools, networks, and academic alliances engaging with China and global markets.</p>
-          </div>
-          <div class="tile">
-            <h3>Family Advisory</h3>
-            <p>Personalized guidance for education pathways, relocation planning, and long-term decision making.</p>
-          </div>
-          <div class="tile">
-            <h3>Project Execution</h3>
-            <p>Bilingual coordination and on-the-ground delivery for complex cross-border initiatives.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRACK RECORD -->
-    <section id="track" class="card">
-      <div class="sectionPad">
-        <h2 class="sectionTitle">A quiet track record</h2>
-        <p class="sectionHint">Credibility without noise — focused on outcomes and long-term relationships.</p>
-
-        <div class="track">
-          <strong>Established 1996</strong>
-          <span>Independent, relationship-driven, and built for long-term outcomes.</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHO -->
-    <section class="card who">
-      <div class="sectionPad">
-        <h2 class="sectionTitle">Who we work with</h2>
-        <p class="sectionHint">A selective set of partners — institutions, families, and teams who value trust and clarity.</p>
-
-        <ul>
-          <li>Educational institutions and associations</li>
-          <li>Families seeking long-term guidance</li>
-          <li>Partners requiring discreet, bilingual execution</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="card">
-      <div class="sectionPad">
-        <h2 class="sectionTitle">Contact</h2>
-        <p class="sectionHint">For institutional inquiries, partnerships, and strategic conversations.</p>
-
-        <div class="contactGrid">
-          <div class="tile">
-            <h3>Email</h3>
-            <p style="margin:0;color:var(--muted);font-size:13.5px;line-height:1.6;">
-              <a href="mailto:info@haiyi.org">info@haiyi.org</a><br/>
-              Responses typically within 1–2 business days.
-            </p>
-          </div>
-
-          <div class="tile" style="text-align:center;">
-            <h3 style="margin-bottom:10px;">WeChat</h3>
-            <img class="qr" src="wechat-qr.jpeg" alt="WeChat QR code" />
-            <div class="qrLabel">WeChat</div>
-          </div>
-
-          <div class="tile" style="text-align:center;">
-            <h3 style="margin-bottom:10px;">WhatsApp</h3>
-            <img class="qr" src="whatsapp-qr.jpeg" alt="WhatsApp QR code" />
-            <div class="qrLabel">WhatsApp</div>
-          </div>
-        </div>
-
-        <div class="footer">
-          <div>© <span id="y"></span> Haiyi Education Group</div>
-          <div><a class="navLink" href="#">Back to top</a></div>
-        </div>
-      </div>
-    </section>
   </div>
 
   <script>
